@@ -26,7 +26,7 @@ function paintToCanvas() {
         ctx.drawImage(video, 0, 0, width, height);
     
         let pixels = ctx.getImageData(0, 0, width, height);
-        pixels = greenScreen(pixels);
+        pixels = rgbSplit(pixels);
         ctx.putImageData(pixels, 0, 0);
     }, 16);
 }
@@ -41,16 +41,6 @@ function takePhoto() {
     link.setAttribute('download', 'handsome');
     link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
     strip.insertBefore(link, strip.firstChild);
-}
-
-function redEffect(pixels) {
-    
-    for (let i = 0; i < pixels.data.length; i += 4) {
-        pixels.data[i + 0] = pixels.data[i + 0] + 100; // RED
-        pixels.data[i + 1] = pixels.data[i + 1] - 50; // GREEN
-        pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // Blue
-    }
-    return pixels;
 }
 
 function rgbSplit(pixels) {
