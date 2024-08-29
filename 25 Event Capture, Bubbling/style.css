@@ -1,0 +1,44 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+div {
+    width: 100%;
+    padding: 100px;
+}
+
+.one {
+    background: thistle;
+}
+
+.two {
+    background: mistyrose;
+}
+
+.three {
+    background: coral;
+}
+
+.four {
+    background: darksalmon;
+}
+
+.five {
+    background: tomato;
+}
+
+button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
